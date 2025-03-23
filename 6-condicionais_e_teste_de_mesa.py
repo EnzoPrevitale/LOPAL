@@ -17,6 +17,8 @@ if bissexto:
 else:
     print("O ano não é bissexto.")
 '''
+import random
+
 # 02 - Calculadora de IMC
 '''
 # Solicitando o peso e a altura do usuário
@@ -308,7 +310,7 @@ b = b + a
 print(a,b)
 '''
 # 12
-
+'''
 x = 12
 y = 5
 z = 3
@@ -319,3 +321,12 @@ if x > y:
 
 x = x - 4
 print(x,y,z)
+'''
+
+### DESAFIO ###
+
+# Jogo de Adivinhação
+
+# Escolhendo um número entre 1 e 10 e armazenando-o em numero_escolhido
+numero_escolhido = random.randint(1,10)
+
