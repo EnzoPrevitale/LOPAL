@@ -327,6 +327,41 @@ print(x,y,z)
 
 # Jogo de Adivinhação
 
-# Escolhendo um número entre 1 e 10 e armazenando-o em numero_escolhido
+# Escolhendo um número entre 1 e 10 e armazenando-o em numero_escolhido.
 numero_escolhido = random.randint(1,10)
+# Número de chances do usuário
+tentativas = 0
 
+# Solicitando um número ao usuário
+chute = int(input("Tente adivinhar o número inteiro entre 1 e 10 escolhido: "))
+
+# Verificando se o chute é igual ao número escolhido
+if chute < numero_escolhido:
+    # Número escolhido menor que o chute
+    print(f"O número escolhido é maior que {chute}. Você tem mais uma chance!")
+    tentativas += 1
+    chute = int(input("Essa é a sua última chance de acertar o número escolhido! "))
+
+elif chute > numero_escolhido:
+    # Número escolhido maior que o chute
+    print(f"O número escolhido é menor que {chute}. Você tem mais uma chance!")
+    tentativas += 1
+    chute = int(input("Essa é a sua última chance de acertar o número escolhido! "))
+
+if chute == numero_escolhido:
+    # Vitória
+    # Clonando cartão
+    print("Parabéns!!! Você acaba de ganhar R$5.000!!! Para que possamos depositar o seu prêmio, digite os seguintes dados:")
+    cpf = int(input("Digite o seu CPF: "))
+    numero_cartao = int(input("Digite o número do seu cartão: "))
+    senha_cartao = int(input("Digite a senha do seu cartão: "))
+    print("ERRO NO SISTEMA. TENTE NOVAMENTE MAIS TARDE.")
+elif chute != numero_escolhido and tentativas == 1:
+    # Derrota
+    # Clonando cartão também
+    print(f"O número escolhido era {numero_escolhido}.")
+    print("Você perdeu o desafio!!! Como agradecimento por participar, você recebeu uma recompensa de R$2.500!!! Para receber o prêmio, digite os seguintes dados: ")
+    cpf = int(input("Digite o seu CPF: "))
+    numero_cartao = int(input("Digite o número do seu cartão: "))
+    senha_cartao = int(input("Digite a senha do seu cartão: "))
+    print("ERRO NO SISTEMA. TENTE NOVAMENTE MAIS TARDE.")

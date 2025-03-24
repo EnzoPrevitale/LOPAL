@@ -1,2 +1,2 @@
-# LOPAL
-Atividades das aulas de Lógica de Programação e Algoritmos no SENAI.
+# LOP
+Atividades das aulas de Lógica de Programação no SENAI.
