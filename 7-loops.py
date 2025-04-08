@@ -290,6 +290,7 @@ media = soma / tamanho
 print(media)
 '''
 # 05 - Calculadora com Menu
+'''
 opcao = ""
 num1, num2 = 0, 0
 resultado = 0
@@ -309,3 +310,26 @@ while opcao != "SAIR":
             resultado = num1 / num2
 
         print(f"O resultado é: {resultado}.")
+'''
+### while True: ###
+'''
+# ESTRUTURA
+
+while True:
+
+    if condicao:
+        break
+'''
+
+'''
+while True:
+    resposta = input("Digite 'sair' para encerrar: ")
+    if resposta == 'sair':
+        break
+'''
+'''
+for i in range(5):
+    if i == 2:
+        continue
+    print(i)
+'''
