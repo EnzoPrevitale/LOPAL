@@ -142,3 +142,61 @@ segundo_menor = min(sequencia)
 
 print(f"O segundo menor número da lista é {segundo_menor}.")
 '''
+# 11 - População de Coelhos
+'''
+num_inicial = int(input("Digite o número inicial de coelhos: "))
+
+while num_inicial < 1:
+    num_inicial = int(input("Digite o número inicial de coelhos: "))
+
+taxa_reproducao = int(input("Digite a taxa de reprodução dos coelhos: "))
+
+while taxa_reproducao < 1:
+    taxa_reproducao = int(input("Digite a taxa de reprodução dos coelhos: "))
+
+taxa_mortalidade = int(input("Digite a taxa de mortalidade dos coelhos: "))
+while taxa_mortalidade < 0:
+    taxa_mortalidade = int(input("Digite a taxa de mortalidade dos coelhos: "))
+
+geracoes = int(input("Digite o número de gerações que deseja simular: "))
+while geracoes < 1:
+    geracoes = int(input("Digite o número de gerações que deseja simular: "))
+
+populacao = num_inicial + (taxa_reproducao - taxa_mortalidade) ** geracoes
+
+print(f"Em {geracoes} gerações, haverão {populacao} coelhos.")
+'''
+# 12 - Forca
+import random
+
+palavra = random.choice(["Python", "Java", "Assembly", "Pascal", "Cobol", "Fortran", "JavaScript", "Rust", "Ruby", ])
+
+palavra_oculta = ("_ " * len(palavra)).split(" ")
+erros = []
+
+chances = 6
+
+while True:
+    exibir_palavra = "".join(palavra_oculta)
+    exibir_erros = " ".join(erros)
+
+    if exibir_palavra == palavra:
+        print("Você venceu!")
+        break
+    elif chances <= 0:
+        print("Você perdeu!")
+        break
+
+    print(f"{exibir_palavra} | {chances} chances | Erros: {exibir_erros}")
+
+    palpite = input("Digite uma letra: ")
+    while len(palpite) != 1:
+        palpite = input("Digite uma letra: ")
+
+    ocorrencias = 0
+    for i in range(len(palavra)):
+        if palpite.upper() == palavra[i].upper():
+            palavra_oculta[i] = palpite.upper() if i == 0 else palpite.lower()
+            ocorrencias += 1
+    if ocorrencias == 0:
+        chances -= 1
